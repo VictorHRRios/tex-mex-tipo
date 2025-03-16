@@ -1,0 +1,21 @@
+Model,Train Mean,Train Std,Test Mean,Test Std
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorize', TfidfVectorizer()),
+                ('reduction', TruncatedSVD(n_components=1000)),
+                ('classifier', LogisticRegression())])",0.944471930186216,0.0009946743995912996,0.9419720876030367,0.00044534526833039326
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorize', TfidfVectorizer()),
+                ('classifier', LogisticRegression())])",0.9514670514670515,0.0006372307081354955,0.9469880284971506,0.00023673377552344707
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorize', CountVectorizer()),
+                ('reduction', TruncatedSVD(n_components=1000)),
+                ('classifier', LogisticRegression())])",0.9442245585102729,0.00040337140442349515,0.9410426427970054,0.0013833335978991855
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorize', CountVectorizer()),
+                ('classifier', LogisticRegression())])",0.9478389335532192,0.000375359040300925,0.9435425973418438,0.0011447150014505117
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorize', TfidfVectorizer()),
+                ('classifier', MultinomialNB())])",0.935731464302893,0.00037874015748015486,0.9334145185635799,0.0010235296594305156
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorize', CountVectorizer()),
+                ('classifier', MultinomialNB())])",0.9387274101559816,0.0005713630593276193,0.9386548168911998,0.0005453011231514094

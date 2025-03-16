@@ -1,0 +1,12 @@
+Tiempo con 30 Procesadores
+
+tfidf, Logistic Regression : done in 7.81 seconds
+tfidf, Random Forest : done in 689.80 seconds
+tfidf, SVM : done in 16031.94 seconds
+tfidf, Lasso : done in 773.41 seconds
+tfidf, Gradient Boosting : done in 1301.33 seconds
+bow, Logistic Regression : done in 3.41 seconds
+bow, Random Forest : done in 625.43 seconds
+bow, SVM : done in 17163.33 seconds
+bow, Lasso : done in 83.55 seconds
+bow, Gradient Boosting : done in 1647.79 seconds
