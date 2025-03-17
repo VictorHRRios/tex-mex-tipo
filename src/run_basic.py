@@ -2,10 +2,13 @@ from preprocessing import dataFrameParser
 from sklearn.model_selection import train_test_split, cross_val_score
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from modeling import create_pipeline
 import numpy as np
+
 
 def main():
     url = "https://raw.githubusercontent.com/gmauricio-toledo/NLP-LCC/main/Rest-Mex/Rest-Mex_2025_train.csv"
@@ -24,13 +27,33 @@ def main():
 
     models = []
     for vectorizer in (TfidfVectorizer, CountVectorizer):
-        for form in (LogisticRegression, ):
-            models.append(create_pipeline(vectorizer(), form(), True))
-            models.append(create_pipeline(vectorizer(), form(), False))
+        for form in (
+            LogisticRegression,
+            RandomForestClassifier,
+            GradientBoostingClassifier,
+            SVC,
+        ):
+            models.append(create_pipeline(vectorizer(), form(random_state=2025), True))
+            models.append(create_pipeline(vectorizer(), form(random_state=2025), False))
 
     for vectorizer in (TfidfVectorizer, CountVectorizer):
-        for form in (MultinomialNB, ):
+        for form in (MultinomialNB,):
             models.append(create_pipeline(vectorizer(), form(), False))
+
+    models.append(
+        create_pipeline(
+            vectorizer(),
+            LogisticRegression(penalty="l1", solver="saga", random_state=2025),
+            True,
+        )
+    )
+    models.append(
+        create_pipeline(
+            vectorizer(),
+            LogisticRegression(penalty="l1", solver="saga", random_state=2025),
+            False,
+        )
+    )
 
     results = []
     for model in models:
@@ -40,17 +63,20 @@ def main():
 
         test_score = cross_val_score(model, X_test, y_test, cv=3, n_jobs=-1)
 
-        results.append({
-        'Model': str(model),
-        'Train Mean': np.mean(train_score),
-        'Train Std': np.std(train_score),
-        'Test Mean': np.mean(test_score),
-        'Test Std': np.std(test_score)
-    })
-        
+        results.append(
+            {
+                "Model": str(model),
+                "Train Mean": np.mean(train_score),
+                "Train Std": np.std(train_score),
+                "Test Mean": np.mean(test_score),
+                "Test Std": np.std(test_score),
+            }
+        )
+
     df_results = pd.DataFrame(results)
 
-    df_results.to_csv('model_performance.csv', index=False)
+    df_results.to_csv("model_performance.csv", index=False)
+
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,4 @@
-Tiempo con 30 Procesadores
-
+tiempos
 tfidf, Logistic Regression : done in 7.81 seconds
 tfidf, Random Forest : done in 689.80 seconds
 tfidf, SVM : done in 16031.94 seconds
