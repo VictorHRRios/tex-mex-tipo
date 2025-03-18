@@ -1,21 +1,74 @@
-Model,Train Mean,Train Std,Test Mean,Test Std
+Model,Train Mean,Train Std
 "Pipeline(steps=[('normalize', TextNormalizer()),
-                ('vectorize', TfidfVectorizer()),
+                ('vectorizer', TfidfVectorizer()),
                 ('reduction', TruncatedSVD(n_components=1000)),
-                ('classifier', LogisticRegression())])",0.944471930186216,0.0009946743995912996,0.9419720876030367,0.00044534526833039326
+                ('classifier', LogisticRegression(random_state=2025))])",0.9442932728647014,0.0011135966236450257
 "Pipeline(steps=[('normalize', TextNormalizer()),
-                ('vectorize', TfidfVectorizer()),
-                ('classifier', LogisticRegression())])",0.9514670514670515,0.0006372307081354955,0.9469880284971506,0.00023673377552344707
+                ('vectorizer', TfidfVectorizer()),
+                ('classifier', LogisticRegression(random_state=2025))])",0.9514670514670515,0.0006372307081354955
 "Pipeline(steps=[('normalize', TextNormalizer()),
-                ('vectorize', CountVectorizer()),
+                ('vectorizer', TfidfVectorizer()),
                 ('reduction', TruncatedSVD(n_components=1000)),
-                ('classifier', LogisticRegression())])",0.9442245585102729,0.00040337140442349515,0.9410426427970054,0.0013833335978991855
+                ('classifier', RandomForestClassifier(random_state=2025))])",0.9005909434480864,0.0010678838551535712
 "Pipeline(steps=[('normalize', TextNormalizer()),
-                ('vectorize', CountVectorizer()),
-                ('classifier', LogisticRegression())])",0.9478389335532192,0.000375359040300925,0.9435425973418438,0.0011447150014505117
+                ('vectorizer', TfidfVectorizer()),
+                ('classifier', RandomForestClassifier(random_state=2025))])",0.9342128770700199,0.0007651089578049838
 "Pipeline(steps=[('normalize', TextNormalizer()),
-                ('vectorize', TfidfVectorizer()),
-                ('classifier', MultinomialNB())])",0.935731464302893,0.00037874015748015486,0.9334145185635799,0.0010235296594305156
+                ('vectorizer', TfidfVectorizer()),
+                ('reduction', TruncatedSVD(n_components=1000)),
+                ('classifier', GradientBoostingClassifier(random_state=2025))])",0.9129595272452415,0.0007165427975663449
 "Pipeline(steps=[('normalize', TextNormalizer()),
-                ('vectorize', CountVectorizer()),
-                ('classifier', MultinomialNB())])",0.9387274101559816,0.0005713630593276193,0.9386548168911998,0.0005453011231514094
+                ('vectorizer', TfidfVectorizer()),
+                ('classifier', GradientBoostingClassifier(random_state=2025))])",0.893932522503951,0.0005903838802723664
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorizer', TfidfVectorizer()),
+                ('reduction', TruncatedSVD(n_components=1000)),
+                ('classifier', SVC(random_state=2025))])",0.9509723081151652,0.0002974625276150874
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorizer', TfidfVectorizer()),
+                ('classifier', SVC(random_state=2025))])",0.9535834535834536,0.0005188730056662622
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorizer', CountVectorizer()),
+                ('reduction', TruncatedSVD(n_components=1000)),
+                ('classifier', LogisticRegression(random_state=2025))])",0.9442314299457156,0.0004641144723636192
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorizer', CountVectorizer()),
+                ('classifier', LogisticRegression(random_state=2025))])",0.9478389335532192,0.000375359040300925
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorizer', CountVectorizer()),
+                ('reduction', TruncatedSVD(n_components=1000)),
+                ('classifier', RandomForestClassifier(random_state=2025))])",0.8874939874939876,0.0011722193574892628
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorizer', CountVectorizer()),
+                ('classifier', RandomForestClassifier(random_state=2025))])",0.930213701642273,0.0005050388188006075
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorizer', CountVectorizer()),
+                ('reduction', TruncatedSVD(n_components=1000)),
+                ('classifier', GradientBoostingClassifier(random_state=2025))])",0.9010582010582011,0.0002736522744690571
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorizer', CountVectorizer()),
+                ('classifier', GradientBoostingClassifier(random_state=2025))])",0.8907991479420051,0.0007111852694529592
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorizer', CountVectorizer()),
+                ('reduction', TruncatedSVD(n_components=1000)),
+                ('classifier', SVC(random_state=2025))])",0.9470762042190614,0.0006969004270464253
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorizer', CountVectorizer()),
+                ('classifier', SVC(random_state=2025))])",0.9489795918367347,0.0008015758439589364
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorizer', TfidfVectorizer()),
+                ('classifier', MultinomialNB())])",0.935731464302893,0.00037874015748015486
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorizer', CountVectorizer()),
+                ('classifier', MultinomialNB())])",0.9387274101559816,0.0005713630593276193
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorizer', CountVectorizer()),
+                ('reduction', TruncatedSVD(n_components=1000)),
+                ('classifier',
+                 LogisticRegression(penalty='l1', random_state=2025,
+                                    solver='saga'))])",0.9446299732014017,0.0003117239393173496
+"Pipeline(steps=[('normalize', TextNormalizer()),
+                ('vectorizer', CountVectorizer()),
+                ('classifier',
+                 LogisticRegression(penalty='l1', random_state=2025,
+                                    solver='saga'))])",0.9495018209303924,0.0003704207234781682
